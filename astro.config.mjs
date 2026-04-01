@@ -4,7 +4,6 @@
 
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   // -------------------------------------------------------
@@ -20,10 +19,9 @@ export default defineConfig({
 
   integrations: [
     tailwind(),
-    sitemap({
-      // sitemap에 포함할 페이지 필터링 (선택 사항)
-      // filter: (page) => page !== 'https://yourdomain.com/private/',
-    }),
+    // sitemap은 커스텀 도메인 확정 후 재추가 예정
+    // import sitemap from '@astrojs/sitemap' 후 아래 주석 해제
+    // sitemap(),
   ],
 
   // 마크다운 설정
