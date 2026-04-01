@@ -1,0 +1,9 @@
+# robots.txt
+# 검색 엔진 크롤러 접근 제어 파일
+# sitemap.xml은 Astro sitemap 인테그레이션이 자동 생성합니다
+
+User-agent: *
+Allow: /
+
+# sitemap 위치 (yourdomain.com을 실제 도메인으로 변경)
+Sitemap: https://daparaceo.github.io/GitpageBlog/sitemap-index.xml

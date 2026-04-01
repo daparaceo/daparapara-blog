@@ -1,0 +1,66 @@
+---
+// src/pages/tags/[tag].astro
+// 태그별 글 목록 페이지
+// 빌드 시 각 태그에 대한 정적 페이지 생성
+
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog', ({ data }) => data.draft !== true);
+
+  // 전체 태그 수집
+  const allTags = [...new Set(allPosts.flatMap((p) => p.data.tags ?? []))];
+
+  return allTags.map((tag) => ({
+    params: { tag },
+    props: {
+      // 해당 태그를 가진 글만 필터링 후 날짜 내림차순 정렬
+      posts: allPosts
+        .filter((p) => p.data.tags?.includes(tag))
+        .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf()),
+    },
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout
+  title={`#${tag} 태그 글 목록`}
+  description={`'${tag}' 태그가 붙은 블로그 글 목록입니다.`}
+>
+  <!-- 헤더 -->
+  <div class="mb-8">
+    <a href="/tags" class="text-sm text-brand-600 hover:underline mb-2 inline-block">
+      ← 전체 태그
+    </a>
+    <h1 class="text-2xl font-bold text-gray-900">
+      <span class="text-brand-600">#{tag}</span> 태그 글 ({posts.length}개)
+    </h1>
+  </div>
+
+  <!-- 글 목록 -->
+  <ul class="divide-y divide-gray-100">
+    {posts.map((post) => (
+      <li class="py-5 group">
+        <a href={`/blog/${post.slug}`} class="block">
+          <h2 class="text-lg font-semibold text-gray-900 group-hover:text-brand-600 transition-colors mb-1">
+            {post.data.title}
+          </h2>
+          {post.data.description && (
+            <p class="text-gray-600 text-sm line-clamp-2 mb-2">{post.data.description}</p>
+          )}
+          <time datetime={post.data.publishedAt.toISOString()} class="text-xs text-gray-400">
+            {post.data.publishedAt.toLocaleDateString('ko-KR', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        </a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
