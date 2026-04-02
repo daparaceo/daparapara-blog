@@ -15,7 +15,7 @@ export default defineConfig({
 
   // GitHub Pages 하위 경로 배포 시 base 설정 (커스텀 도메인이면 주석 처리)
   // GitHub Pages 하위 경로 배포 (커스텀 도메인 연결 시 이 줄 주석 처리)
-  base: '/GitpageBlog',
+  base: '/',
 
   integrations: [
     tailwind(),
