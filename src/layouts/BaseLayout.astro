@@ -125,5 +125,25 @@ const fullTitle = `${title} | ${SITE_NAME}`;
     </div>
   </footer>
 
+  <!-- TTS: data-word 속성이 있는 요소 클릭 시 음성 재생 -->
+  <script>
+    document.addEventListener('click', function(e) {
+      const item = e.target.closest('[data-word]');
+      if (!item) return;
+
+      const text = item.dataset.word;
+      const lang = item.dataset.lang || 'en-US';
+
+      item.style.opacity = '0.6';
+      fetch(`https://tts-api-daparapara.vercel.app/tts?text=${encodeURIComponent(text)}&lang=${lang}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.url) new Audio(data.url).play();
+        })
+        .catch(e => console.error('TTS 오류:', e))
+        .finally(() => { item.style.opacity = '1'; });
+    });
+  </script>
+
 </body>
 </html>
