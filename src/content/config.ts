@@ -3,11 +3,12 @@ import { defineCollection, z } from 'astro:content';
 // 카테고리 목록 (확장 시 여기에 추가)
 // 각 카테고리는 /category/[slug] 페이지로 자동 생성됨
 export const CATEGORIES = [
-  { slug: 'life-info',  label: '생활정보' },
-  { slug: 'tech',       label: 'IT·기술' },
-  { slug: 'finance',    label: '재테크' },
-  { slug: 'travel',     label: '여행' },
-  { slug: 'food',       label: '음식·맛집' },
+  { slug: 'life-info',       label: '생활정보' },
+  { slug: 'tech',            label: 'IT·기술' },
+  { slug: 'finance',         label: '재테크' },
+  { slug: 'travel',          label: '여행' },
+  { slug: 'food',            label: '음식·맛집' },
+  { slug: 'english-reading', label: '영어원서읽기' },
 ] as const;
 
 export type CategorySlug = typeof CATEGORIES[number]['slug'];
@@ -21,7 +22,7 @@ const blogCollection = defineCollection({
 
     // 카테고리 (목록 페이지 분류 기준)
     category: z.enum([
-      'life-info', 'tech', 'finance', 'travel', 'food'
+      'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading'
     ]).optional(),
 
     // 태그 (카테고리 내 세부 분류)
