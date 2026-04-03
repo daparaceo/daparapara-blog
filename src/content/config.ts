@@ -9,6 +9,7 @@ export const CATEGORIES = [
   { slug: 'travel',          label: '여행' },
   { slug: 'food',            label: '음식·맛집' },
   { slug: 'english-reading', label: '영어원서읽기' },
+  { slug: 'camping',         label: '캠핑' },
 ] as const;
 
 export type CategorySlug = typeof CATEGORIES[number]['slug'];
@@ -22,7 +23,7 @@ const blogCollection = defineCollection({
 
     // 카테고리 (목록 페이지 분류 기준)
     category: z.enum([
-      'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading'
+      'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading', 'camping'
     ]).optional(),
 
     // 태그 (카테고리 내 세부 분류)
