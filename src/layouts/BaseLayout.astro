@@ -207,7 +207,7 @@ const fullTitle = `${title} | ${SITE_NAME}`;
       const lang = item.dataset.lang || 'en-US';
 
       item.style.opacity = '0.6';
-      fetch(`https://tts-api-daparapara.vercel.app/tts?text=${encodeURIComponent(text)}&lang=${lang}`)
+      fetch(`https://api.daparapara.com/tts?text=${encodeURIComponent(text)}&lang=${lang}`)
         .then(res => res.json())
         .then(data => {
           if (data.url) new Audio(data.url).play();
