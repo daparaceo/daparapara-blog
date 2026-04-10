@@ -4,6 +4,7 @@ description: "공기는 보이지 않지만 어디에나 있어요. 컵과 냅�
 publishedAt: 2026-04-10
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, Air Is All Around You, Franklyn M. Branley, 과학그림책, 논픽션, 자연과학, 공기]
+title: "Air Is All Around You"
 author: "Franklyn M. Branley"
 ar_level: 2.6
 isbn: "9780060594152"
@@ -13,10 +14,11 @@ isbn: "9780060594152"
 <div class="book-container" translate="no">
 <img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto,f_auto/daparapara/books/covers/9780060594152.jpg" alt="Air Is All Around You 표지" />
 <table class="book-table">
+  <tr><td class="label">Title</td><td>Air Is All Around You</td></tr>
   <tr><td class="label">Author</td><td>Franklyn M. Branley</td></tr>
+  <tr><td class="label">ISBN</td><td>9780060594152</td></tr>
   <tr><td class="label">AR Level</td><td>2.6</td></tr>
   <tr><td class="label">Lexile</td><td>AD490L</td></tr>
-  <tr><td class="label">ISBN</td><td>9780060594152</td></tr>
 </table>
 
 <div class="section">
