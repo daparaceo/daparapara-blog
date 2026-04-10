@@ -10,40 +10,6 @@ series: "Bear Series"
 isbn: "9780689859731"
 ---
 
-<style>
-.book-container { max-width: 720px; margin: 0 auto; }
-.section { margin: 30px 0; }
-.section h3 { font-size: 1.2em; color: #222; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 3px solid #4285f4; }
-.vocab-item { background: #f8f9fa; padding: 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #4285f4; cursor: pointer; transition: all 0.2s; }
-.vocab-item:hover { background: #e3f2fd; transform: translateX(3px); }
-.vocab-text { font-size: 1.1em; font-weight: bold; color: #222; margin-bottom: 8px; }
-.vocab-meaning { color: #555; margin: 5px 0; }
-.vocab-example { font-size: 0.9em; color: #666; margin-top: 8px; padding-left: 10px; border-left: 2px solid #ddd; font-style: italic; }
-.vocab-note { font-size: 0.85em; color: #999; margin-top: 5px; }
-.quote-item { background: #fff8e1; padding: 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #ffc107; cursor: pointer; transition: all 0.2s; }
-.quote-item:hover { background: #fff3cd; transform: translateX(3px); }
-.quote-text { font-style: italic; color: #444; margin-bottom: 8px; line-height: 1.7; }
-.quote-translation { color: #666; margin: 8px 0; }
-.quote-note { font-size: 0.9em; color: #999; margin-top: 8px; }
-.tip-box { background: #e3f2fd; padding: 12px 20px 20px; border-radius: 8px; border: 2px solid #90caf9; margin: 25px 0; }
-.tip-box h3 { color: #1976d2; margin: 0 0 12px; font-size: 1.1em; }
-.tip-box p { margin: 5px 0; color: #856404; }
-.tip-box ul { margin-left: 10px; }
-.tip-box li { margin: 5px 0; color: #555; }
-.book-link { display: block; background: #f8f9fa; padding: 12px; margin: 10px 0; border-radius: 6px; border: 1px solid #e0e0e0; color: #1976d2; text-decoration: none; transition: all 0.2s; }
-.book-link:hover { background: #e3f2fd; transform: translateY(-2px); box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
-.purchase-links { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0; }
-@media (max-width: 480px) { .purchase-links { grid-template-columns: repeat(2, 1fr); } }
-.store-link { display: flex; align-items: center; justify-content: center; padding: 12px; border: 1px solid #ddd; border-radius: 6px; text-decoration: none; color: #222; background: #fff; transition: all 0.2s; }
-.store-link:hover { background: #f8f9fa; border-color: #4285f4; transform: translateY(-2px); box-shadow: 0 3px 8px rgba(0,0,0,0.1); }
-.store-link img { width: 18px; height: 18px; margin-right: 6px; }
-.related-books { display: flex; flex-direction: column; gap: 8px; }
-.book-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.9em; }
-.book-table td { padding: 6px 10px; border: 1px solid #ddd; }
-.book-table .label { background: #f8f9fa; width: 110px; font-weight: bold; }
-.affiliate-notice { font-size: 0.85em; color: #999; text-align: center; margin-top: 12px; }
-.book-cover { display: block; width: 80%; max-width: 576px; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-</style>
 
 <div class="book-container">
 <img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto,f_auto/daparapara/books/covers/9780689859731.jpg" alt="Bear Feels Sick 표지" />
@@ -166,24 +132,4 @@ isbn: "9780689859731"
     <li>아팠을 때 도움을 준 사람에 대해 영어로 말해 보세요: "_____ took care of me when I was sick."</li>
   </ul>
   <p>⚠️ 핵심 어휘 외에 어려운 부분이 많다면 한 단계 낮은 책을 권장합니다.</p>
-</div>
-
-
-<div class="section">
-<h3>🛒 구매하기</h3>
-<div class="purchase-links">
-  <a class="store-link" href="https://click.linkprice.com/click.php?m=yes24&a=A100702385&l=9999&l_cd1=3&l_cd2=0&tu=https://www.yes24.com/product/search?query=Bear+Feels+Sick" target="_blank" rel="noopener">
-    <img src="https://www.google.com/s2/favicons?domain=yes24.com&sz=32" alt="예스24" /> 예스24
-  </a>
-  <a class="store-link" href="https://click.linkprice.com/click.php?m=kbbook&a=A100702385&l=9999&l_cd1=3&l_cd2=0&tu=https://search.kyobobook.co.kr/search?keyword=Bear+Feels+Sick" target="_blank" rel="noopener">
-    <img src="https://www.google.com/s2/favicons?domain=kyobobook.co.kr&sz=32" alt="교보문고" /> 교보문고
-  </a>
-  <a class="store-link" href="https://click.linkprice.com/click.php?m=ypbooks&a=A100702385&l=9999&l_cd1=3&l_cd2=0&tu=https://www.ypbooks.co.kr/search/book?word=Bear+Feels+Sick" target="_blank" rel="noopener">
-    <img src="https://www.google.com/s2/favicons?domain=ypbooks.co.kr&sz=32" alt="영풍문고" /> 영풍문고
-  </a>
-  <a class="store-link" href="https://link.coupang.com/re/AFFSRP?lptag=AF1901544&subid=AF1901544&pageKey=Bear+Feels+Sick" target="_blank" rel="noopener">
-    <img src="https://www.google.com/s2/favicons?domain=coupang.com&sz=32" alt="쿠팡" /> 쿠팡
-  </a>
-</div>
-<p class="affiliate-notice">* 이 포스트는 제휴 마케팅이 포함된 광고로 일정 커미션을 지급받을 수 있습니다.</p>
 </div>

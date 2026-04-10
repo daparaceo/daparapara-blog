@@ -9,31 +9,6 @@ ar_level: 2.6
 isbn: "9780060594152"
 ---
 
-<style>
-.book-container { max-width: 720px; margin: 0 auto; }
-.section { margin: 30px 0; }
-.section h3 { font-size: 1.2em; color: #222; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 3px solid #4285f4; }
-.vocab-item { background: #f8f9fa; padding: 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #4285f4; cursor: pointer; transition: all 0.2s; }
-.vocab-item:hover { background: #e3f2fd; transform: translateX(3px); }
-.vocab-text { font-size: 1.1em; font-weight: bold; color: #222; margin-bottom: 8px; }
-.vocab-meaning { color: #555; margin: 5px 0; }
-.vocab-example { font-size: 0.9em; color: #666; margin-top: 8px; padding-left: 10px; border-left: 2px solid #ddd; font-style: italic; }
-.vocab-note { font-size: 0.85em; color: #999; margin-top: 5px; }
-.quote-item { background: #fff8e1; padding: 15px; margin: 12px 0; border-radius: 6px; border-left: 4px solid #ffc107; cursor: pointer; transition: all 0.2s; }
-.quote-item:hover { background: #fff3cd; transform: translateX(3px); }
-.quote-text { font-style: italic; color: #444; margin-bottom: 8px; line-height: 1.7; }
-.quote-translation { color: #666; margin: 8px 0; }
-.quote-note { font-size: 0.9em; color: #999; margin-top: 8px; }
-.tip-box { background: #e3f2fd; padding: 12px 20px 20px; border-radius: 8px; border: 2px solid #90caf9; margin: 25px 0; }
-.tip-box h3 { color: #1976d2; margin: 0 0 12px; font-size: 1.1em; }
-.tip-box p { margin: 5px 0; color: #856404; }
-.tip-box ul { margin-left: 10px; }
-.tip-box li { margin: 5px 0; color: #555; }
-.book-table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 0.9em; }
-.book-table td { padding: 6px 10px; border: 1px solid #ddd; }
-.book-table .label { background: #f8f9fa; width: 110px; font-weight: bold; }
-.book-cover { display: block; width: 80%; max-width: 576px; margin: 0 auto 20px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-</style>
 
 <div class="book-container">
 <img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto,f_auto/daparapara/books/covers/9780060594152.jpg" alt="Air Is All Around You 표지" />
