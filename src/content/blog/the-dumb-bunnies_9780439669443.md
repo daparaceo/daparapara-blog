@@ -132,22 +132,3 @@ isbn: "9780439669443"
   </ul>
   <p>⚠️ 핵심 어휘 외에 어려운 부분이 많다면 한 단계 낮은 책을 권장합니다.</p>
 </div>
-
-<div class="section">
-<h3>🛒 구매 링크</h3>
-<div class="related-books">
-  <a class="book-link" href="https://click.linkprice.com/click.php?m=yes24&a=A100702385&l=9999&l_cd1=3&l_cd2=0&tu=https://www.yes24.com/product/search?query=The+Dumb+Bunnies" target="_blank" rel="noopener">
-    📗 예스24에서 보기
-  </a>
-  <a class="book-link" href="https://click.linkprice.com/click.php?m=kbbook&a=A100702385&l=9999&l_cd1=3&l_cd2=0&tu=https://search.kyobobook.co.kr/search?keyword=The+Dumb+Bunnies" target="_blank" rel="noopener">
-    📘 교보문고에서 보기
-  </a>
-  <a class="book-link" href="https://click.linkprice.com/click.php?m=ypbooks&a=A100702385&l=9999&l_cd1=3&l_cd2=0&tu=https://www.ypbooks.co.kr/search/book?word=The+Dumb+Bunnies" target="_blank" rel="noopener">
-    📙 영풍문고에서 보기
-  </a>
-  <a class="book-link" href="https://link.coupang.com/re/AFFSRP?lptag=AF1901544&subid=AF1901544&pageKey=The+Dumb+Bunnies" target="_blank" rel="noopener">
-    🛍️ 쿠팡에서 보기
-  </a>
-</div>
-<p class="affiliate-notice">※ 위 링크는 제휴 링크로, 구매 시 소정의 수수료가 지급될 수 있습니다.</p>
-</div>
