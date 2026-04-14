@@ -12,7 +12,7 @@ isbn: "9780590847438"
 ---
 
 <div class="book-container" translate="no">
-<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/9780590847438.jpg" alt="The Dumb Bunnies Go To The Zoo 표지" />
+<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/the-dumb-bunnies-go-to-the-zoo_9780590847438.jpg" alt="The Dumb Bunnies Go To The Zoo 표지" />
 <table class="book-table">
   <tr><td class="label">Title</td><td>The Dumb Bunnies Go To The Zoo</td></tr>
   <tr><td class="label">Author</td><td>Dav Pilkey</td></tr>
