@@ -26,6 +26,11 @@ const blogCollection = defineCollection({
       'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading', 'camping'
     ]).optional(),
 
+    // 추가 카테고리 (여러 카테고리에 동시 노출할 때 사용)
+    categories: z.array(z.enum([
+      'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading', 'camping'
+    ])).optional().default([]),
+
     // 태그 (카테고리 내 세부 분류)
     tags: z.array(z.string()).optional().default([]),
 
@@ -45,6 +50,9 @@ const blogCollection = defineCollection({
       lng: z.number(),                   // 경도 (예: 126.9780)
       label: z.string().optional(),      // 핀 라벨 (클릭 시 팝업으로 표시)
     })).optional(),
+
+    // 관련 포스트 고정 (slug 배열 — 추천 영역에 항상 노출)
+    pinnedRelated: z.array(z.string()).optional().default([]),
 
     draft: z.boolean().optional().default(false),
   }),

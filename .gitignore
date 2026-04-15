@@ -21,5 +21,8 @@ Thumbs.db
 # 로그
 npm-debug.log*
 
-#AI
+# AI
 .claude/
+
+# Private
+.private/
