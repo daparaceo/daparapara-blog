@@ -48,7 +48,7 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          RESULT=$(node scripts/generate-post.mjs)
+          RESULT=$(node .private/scripts/generate-post.mjs)
           echo "result=$RESULT" >> "$GITHUB_OUTPUT"
           echo "Script result: $RESULT"
 
