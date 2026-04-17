@@ -61,6 +61,12 @@ jobs:
 
           git push
 
+      - name: Trigger deploy
+        if: startsWith(steps.generate.outputs.result, 'GENERATED:')
+        run: gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: No topic available
         if: steps.generate.outputs.result == 'NO_TOPIC'
         run: echo "대기 중인 토픽이 없습니다. scripts/auto-post-topics.json에 토픽을 추가하세요."
