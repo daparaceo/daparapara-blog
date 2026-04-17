@@ -61,7 +61,7 @@ jobs:
           git config user.name "daparapara-bot"
           git config user.email "daparaceo@gmail.com"
 
-          git add "$FILEPATH" scripts/auto-post-topics.json
+          git add "$FILEPATH"
 
           FILENAME=$(basename "$FILEPATH" .md)
           git commit -m "feat: 자동 생활정보 포스트 — ${FILENAME}" -m "Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"

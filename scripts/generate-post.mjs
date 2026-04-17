@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
  * 생활정보 자동 포스트 생성 스크립트
- * - scripts/auto-post-topics.json 에서 첫 번째 토픽을 꺼내 Claude API로 본문 생성
+ * - src/content/blog/ 의 기존 포스트를 스캔해 중복 방지
+ * - 오늘 기준 핫한 이슈 중 기존에 없는 주제를 Claude가 직접 선택
  * - 결과 파일을 src/content/blog/{slug}.md 에 저장
  * - 마지막 줄에 "GENERATED:경로" 출력 (GitHub Actions에서 파싱)
- * - 토픽이 없으면 "NO_TOPIC" 출력 후 종료
  *
  * 사용:
  *   ANTHROPIC_API_KEY=sk-... node scripts/generate-post.mjs
@@ -19,33 +19,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
 const ROOT       = path.join(__dirname, '..');
 
-// ── 경로 설정 ──────────────────────────────────────────────
-const QUEUE_PATH = path.join(ROOT, 'scripts', 'auto-post-topics.json');
 const GUIDE_PATH = path.join(ROOT, '.private', 'life-info-guide.md');
 const POSTS_DIR  = path.join(ROOT, 'src', 'content', 'blog');
-
-// ── 토픽 큐 로드 ───────────────────────────────────────────
-let queue;
-try {
-  queue = JSON.parse(fs.readFileSync(QUEUE_PATH, 'utf-8'));
-} catch (e) {
-  console.error('[generate-post] 토픽 큐 읽기 실패:', e.message);
-  process.exit(1);
-}
-
-if (!Array.isArray(queue.pending) || queue.pending.length === 0) {
-  console.log('NO_TOPIC');
-  process.exit(0);
-}
-
-const topic = queue.pending.shift();
-console.error(`[generate-post] 주제: ${topic.title}`);
-console.error(`[generate-post] 슬러그: ${topic.slug}`);
 
 // ── 날짜 (KST 기준) ────────────────────────────────────────
 const now     = new Date();
 const kstDate = new Date(now.getTime() + 9 * 60 * 60 * 1000);
-const dateStr = kstDate.toISOString().split('T')[0]; // YYYY-MM-DD
+const dateStr = kstDate.toISOString().split('T')[0];
 
 // ── 가이드 파일 로드 ───────────────────────────────────────
 let guide = '';
@@ -54,6 +34,21 @@ try {
 } catch (e) {
   console.error('[generate-post] 가이드 파일 없음, 기본 설정으로 진행');
 }
+
+// ── 기존 포스트 목록 스캔 ──────────────────────────────────
+const existingTitles = fs.readdirSync(POSTS_DIR)
+  .filter((f) => f.endsWith('.md'))
+  .map((f) => {
+    try {
+      const content = fs.readFileSync(path.join(POSTS_DIR, f), 'utf-8');
+      const match = content.match(/^title:\s*["']?(.+?)["']?\s*$/m);
+      return match ? match[1] : f.replace('.md', '');
+    } catch {
+      return f.replace('.md', '');
+    }
+  });
+
+console.error(`[generate-post] 기존 포스트 ${existingTitles.length}개 확인`);
 
 // ── Claude API 호출 ────────────────────────────────────────
 const client = new Anthropic();
@@ -74,14 +69,16 @@ ${guide ? `아래는 블로그 작업 가이드입니다:\n${guide}` : ''}
 
 const userPrompt = `오늘 날짜: ${dateStr}
 
-아래 주제로 생활정보 블로그 포스트를 작성해주세요.
+아래는 이미 작성된 포스트 목록입니다:
+${existingTitles.map((t) => `- ${t}`).join('\n')}
 
-주제: ${topic.title}
-${topic.keywords ? `핵심 키워드: ${topic.keywords.join(', ')}` : ''}
+오늘 기준 핫한 이슈 중 기존에 없는 주제로 알아서 골라 써줘.
 
 출력 형식 — 아래 마크다운을 그대로 시작하세요. 다른 설명이나 코드 펜스 없이 파일 내용만 출력하세요.
+slug 필드는 파일명으로 사용되므로 반드시 영문 kebab-case로 작성하세요.
 
 ---
+slug: "영문-kebab-case-슬러그"
 title: "제목 — 부제목 (독자가 클릭하고 싶은 SEO 제목)"
 description: "150자 이내 요약. 핵심 키워드 포함."
 publishedAt: ${dateStr}
@@ -118,24 +115,27 @@ if (!textContent.trim()) {
   process.exit(1);
 }
 
+// ── slug 추출 후 프론트매터에서 제거 ──────────────────────
+const slugMatch = textContent.match(/^slug:\s*["']?([a-z0-9-]+)["']?\s*$/m);
+if (!slugMatch) {
+  console.error('[generate-post] slug 필드를 찾을 수 없습니다');
+  process.exit(1);
+}
+const slug = slugMatch[1];
+const cleanedContent = textContent.replace(/^slug:.*\n/m, '');
+
+console.error(`[generate-post] 선택된 슬러그: ${slug}`);
+
 // ── 파일 저장 ──────────────────────────────────────────────
-const filename = `${topic.slug}.md`;
-const filepath = path.join(POSTS_DIR, filename);
+const filename      = `${slug}.md`;
+const baseFilepath  = path.join(POSTS_DIR, filename);
+const finalFilepath = fs.existsSync(baseFilepath)
+  ? path.join(POSTS_DIR, `${slug}-${dateStr}.md`)
+  : baseFilepath;
 
-// 이미 같은 슬러그 파일이 있으면 날짜 접미사 추가
-const finalFilepath = fs.existsSync(filepath)
-  ? path.join(POSTS_DIR, `${topic.slug}-${dateStr}.md`)
-  : filepath;
-
-fs.writeFileSync(finalFilepath, textContent, 'utf-8');
+fs.writeFileSync(finalFilepath, cleanedContent, 'utf-8');
 const relPath = path.relative(ROOT, finalFilepath).replace(/\\/g, '/');
 console.error(`[generate-post] 파일 저장: ${relPath}`);
-
-// ── 큐 업데이트 ────────────────────────────────────────────
-if (!Array.isArray(queue.completed)) queue.completed = [];
-queue.completed.unshift({ ...topic, completedAt: dateStr });
-fs.writeFileSync(QUEUE_PATH, JSON.stringify(queue, null, 2) + '\n', 'utf-8');
-console.error('[generate-post] 토픽 큐 업데이트 완료');
 
 // ── 워크플로우용 결과 출력 ─────────────────────────────────
 console.log(`GENERATED:${relPath}`);
