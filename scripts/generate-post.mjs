@@ -96,13 +96,12 @@ console.error('[generate-post] Claude API 호출 중...');
 
 let response;
 try {
-  const stream = await client.messages.stream({
+  response = await client.messages.stream({
     model:      'claude-sonnet-4-6',
     max_tokens: 4096,
     system:     systemPrompt,
     messages:   [{ role: 'user', content: userPrompt }],
-  });
-  response = await stream.getFinalMessage();
+  }).finalMessage();
 } catch (e) {
   console.error('[generate-post] API 오류:', e.message);
   process.exit(1);
