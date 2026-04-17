@@ -2,6 +2,7 @@
 // @astrojs/sitemap 라이브러리 버그 우회용
 
 import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../content/config';
 
 export async function GET() {
   const siteUrl = 'https://daparapara.com';
@@ -15,6 +16,25 @@ export async function GET() {
     { url: '/search/',  priority: '0.6', changefreq: 'monthly' },
   ];
 
+  // 글이 1개 이상 있는 카테고리만 포함 + lastmod는 해당 카테고리 최신 글 날짜
+  const categoryEntries = CATEGORIES
+    .map(({ slug }) => {
+      const categoryPosts = posts.filter(
+        (p) => p.data.category === slug || (p.data.categories ?? []).includes(slug)
+      );
+      if (categoryPosts.length === 0) return null;
+      const latest = categoryPosts
+        .map((p) => p.data.publishedAt)
+        .sort((a, b) => b.valueOf() - a.valueOf())[0];
+      return {
+        url: `/category/${slug}/`,
+        priority: '0.8',
+        changefreq: 'weekly',
+        lastmod: latest.toISOString().split('T')[0],
+      };
+    })
+    .filter(Boolean) as { url: string; priority: string; changefreq: string; lastmod: string }[];
+
   const postEntries = posts.map((post) => ({
     url: `/blog/${post.slug}/`,
     priority: '0.7',
@@ -22,7 +42,7 @@ export async function GET() {
     lastmod: post.data.publishedAt.toISOString().split('T')[0],
   }));
 
-  const allEntries = [...staticPages, ...postEntries];
+  const allEntries = [...staticPages, ...categoryEntries, ...postEntries];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

@@ -28,7 +28,7 @@ const {
 } = Astro.props;
 
 const SITE_NAME = 'daparapara';           // ← 블로그 이름 (변경 가능)
-const siteUrl   = 'https://daparapara.com';
+const siteUrl   = Astro.site?.href.replace(/\/$/, '') ?? 'https://daparapara.com';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const fullTitle = `${title} | ${SITE_NAME}`;
 ---
