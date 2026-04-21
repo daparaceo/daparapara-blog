@@ -2,6 +2,7 @@
 title: "[AR 2.9] Big Sister and Little Sister - 언니도 가끔은 위로가 필요해"
 description: "언제나 동생을 돌보던 언니가 혼자 울고 있을 때, 이번엔 동생이 언니를 안아줍니다. 서로 돌보는 자매의 따뜻한 이야기."
 publishedAt: 2026-04-20
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/5f302b8d19d8469d6e4dba54.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, Big Sister and Little Sister, Charlotte Zolotow, 자매, 그림책, 우정과사랑, 가족]
 en_title: "Big Sister and Little Sister"

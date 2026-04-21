@@ -2,6 +2,7 @@
 title: "[AR 2.9] If The Dinosaurs Came Back - 공룡이 돌아온다면? 상상력 넘치는 공룡 그림책"
 description: "공룡을 열렬히 사랑하는 아이가 상상하는 유쾌한 세상. 공룡이 잔디를 깎고, 빌딩을 짓고, 비구름을 밀어내는 세상을 그린 Bernard Most의 독창적인 그림책입니다."
 publishedAt: 2026-04-13
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/40acbebe37eb1b983bb50faf.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, If The Dinosaurs Came Back, Bernard Most, 공룡, 상상력, 픽션그림책, 창의력]
 en_title: "If The Dinosaurs Came Back"

@@ -2,6 +2,7 @@
 title: "[AR 2.8] Slowly, Slowly, Slowly, Said the Sloth - 느림보 나무늘보의 당당한 자기 선언"
 description: "나무늘보는 왜 그렇게 느리고 조용하고 게으른 걸까요? 정글 친구들의 물음에 나무늘보가 마침내 입을 열어 답합니다. Eric Carle의 그림책으로 배우는 풍부한 감정·성격 형용사 어휘."
 publishedAt: 2026-04-20
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/b63f7ecc17efe4263bc54e6b.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, Slowly Slowly Slowly Said the Sloth, Eric Carle, 나무늘보, 자기표현, 그림책, 자존감]
 en_title: "\"Slowly, Slowly, Slowly,\" Said the Sloth"

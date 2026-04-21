@@ -2,6 +2,7 @@
 title: "[AR 2.5] Franklin in the Dark - 어둠이 무서운 거북이 프랭클린의 용기"
 description: "어둠이 무서워 껍데기 속으로 들어가지 못하는 거북이 프랭클린. 다양한 동물 친구들을 만나며 누구나 무언가를 두려워한다는 사실을 깨닫고 작은 용기를 내는 따뜻한 그림책입니다."
 publishedAt: 2026-04-20
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/40ab97517f3a3732579e3d63.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, Franklin in the Dark, Paulette Bourgeois, 프랭클린, 두려움극복, 그림책, 자기극복]
 en_title: "Franklin in the Dark"

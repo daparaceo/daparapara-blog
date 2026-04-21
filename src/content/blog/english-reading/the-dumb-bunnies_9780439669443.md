@@ -2,6 +2,7 @@
 title: "[AR 2.8] The Dumb Bunnies - 엉뚱하고 웃긴 토끼 가족의 좌충우돌 이야기"
 description: "황당하게 행동하는 토끼 가족의 코믹한 일상을 담은 그림책. 동화 속 클리셰를 유쾌하게 뒤집으며 아이들에게 웃음과 창의적 언어 감각을 길러줍니다."
 publishedAt: 2026-04-14
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/be542b433a317593ec6aff72.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, The Dumb Bunnies, Dav Pilkey, 토끼, 그림책, 유머, 패러디]
 en_title: "The Dumb Bunnies"

@@ -2,6 +2,7 @@
 title: "[AR 1.5] Bear In Sunshine - 날씨마다 신나는 곰의 하루, 영어 날씨 표현 그림책"
 description: "맑은 날, 비 오는 날, 바람 부는 날, 눈 오는 날… 어떤 날씨에도 즐거움을 찾는 곰의 이야기. 날씨 어휘와 계절을 리듬감 있게 익힐 수 있는 유아 영어 그림책입니다."
 publishedAt: 2026-04-16
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/6393dc6568a2520dc51e43fa.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, Bear In Sunshine, Stella Blackstone, 날씨영어, 계절, 유아그림책, 운율]
 en_title: "Bear In Sunshine"
