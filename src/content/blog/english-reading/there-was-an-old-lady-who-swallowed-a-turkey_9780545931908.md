@@ -2,6 +2,7 @@
 title: "[AR 2.6] There Was An Old Lady Who Swallowed A Turkey! - 추수감사절 퍼레이드를 준비하는 엉뚱한 할머니 이야기"
 description: "칠면조를 꿀꺽 삼킨 할머니가 공, 모자, 풍선, 보트, 바퀴까지 차례차례 삼키며 추수감사절 퍼레이드를 완성해 가는 유쾌한 누적식 그림책입니다."
 publishedAt: 2026-04-21
+ogImage: "https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/2c6ebffcd8c521823be01ba1.jpg"
 category: "english-reading"
 tags: [영어원서, 영어학습, 초등영어, AR레벨, There Was An Old Lady Who Swallowed A Turkey, Lucille Colandro, 추수감사절, 누적식그림책, 리듬영어, 반복학습]
 en_title: "There Was An Old Lady Who Swallowed A Turkey!"
