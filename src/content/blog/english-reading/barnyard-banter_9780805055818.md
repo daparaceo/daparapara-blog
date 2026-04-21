@@ -12,7 +12,7 @@ isbn: "9780805055818"
 ---
 
 <div class="book-container" translate="no">
-<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/barnyard-banter_9780805055818.jpg" alt="Barnyard Banter (cover)" />
+<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/42602909b502d01d430114f7.jpg" alt="Barnyard Banter (cover)" />
 <table class="book-table">
   <tr><td class="label">Title</td><td>Barnyard Banter</td></tr>
   <tr><td class="label">Author</td><td>Denise Fleming</td></tr>

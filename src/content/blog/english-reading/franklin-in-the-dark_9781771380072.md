@@ -13,7 +13,7 @@ isbn: "9781771380072"
 ---
 
 <div class="book-container" translate="no">
-<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/franklin-in-the-dark_9781771380072" alt="Franklin in the Dark (cover)" />
+<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/40ab97517f3a3732579e3d63.jpg" alt="Franklin in the Dark (cover)" />
 <table class="book-table">
   <tr><td class="label">Title</td><td>Franklin in the Dark</td></tr>
   <tr><td class="label">Author</td><td>Paulette Bourgeois</td></tr>

@@ -12,7 +12,7 @@ isbn: "9780439669443"
 ---
 
 <div class="book-container" translate="no">
-<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/the-dumb-bunnies_9780439669443.jpg" alt="The Dumb Bunnies (cover)" />
+<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/be542b433a317593ec6aff72.jpg" alt="The Dumb Bunnies (cover)" />
 <table class="book-table">
   <tr><td class="label">Title</td><td>The Dumb Bunnies</td></tr>
   <tr><td class="label">Author</td><td>Dav Pilkey</td></tr>

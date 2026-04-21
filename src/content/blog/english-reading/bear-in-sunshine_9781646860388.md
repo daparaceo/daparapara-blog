@@ -12,7 +12,7 @@ isbn: "9781646860388"
 ---
 
 <div class="book-container" translate="no">
-<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/bear-in-sunshine_9781646860388.jpg" alt="Bear In Sunshine (cover)" />
+<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/6393dc6568a2520dc51e43fa.jpg" alt="Bear In Sunshine (cover)" />
 <table class="book-table">
   <tr><td class="label">Title</td><td>Bear In Sunshine</td></tr>
   <tr><td class="label">Author</td><td>Stella Blackstone</td></tr>

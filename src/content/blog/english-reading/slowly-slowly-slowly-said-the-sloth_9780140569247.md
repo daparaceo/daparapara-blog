@@ -12,7 +12,7 @@ isbn: "9780140569247"
 ---
 
 <div class="book-container" translate="no">
-<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/daparapara/books/covers/slowly-slowly-slowly-said-the-sloth_9780140569247" alt="&quot;Slowly, Slowly, Slowly,&quot; Said the Sloth (cover)" />
+<img class="book-cover" src="https://res.cloudinary.com/dtv8s65sa/image/upload/q_auto:best,f_auto/b63f7ecc17efe4263bc54e6b.jpg" alt="&quot;Slowly, Slowly, Slowly,&quot; Said the Sloth (cover)" />
 <table class="book-table">
   <tr><td class="label">Title</td><td>"Slowly, Slowly, Slowly," Said the Sloth</td></tr>
   <tr><td class="label">Author</td><td>Eric Carle</td></tr>
