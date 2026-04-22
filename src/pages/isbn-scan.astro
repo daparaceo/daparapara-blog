@@ -151,12 +151,51 @@ for (const post of posts) {
     let html5QrCode = null;
     let isScanning   = false;
 
+    // ── ISBN 정규화 ──────────────────────────────────────────
+    // EAN-13 + EAN-2/EAN-5 부가코드, ISBN-10 등 다양한 스캔 결과를
+    // 표준 ISBN-13(13자리) 으로 변환한다.
+    function normalizeIsbn(raw) {
+      var d = raw.replace(/\D/g, '');
+
+      // 이미 정상 EAN-13
+      if (d.length === 13 && /^97[89]/.test(d)) return d;
+
+      // 14자리(978/979 시작): Android BarcodeDetector 비표준 형식
+      //   EAN-13 체크섬 제외 12자리 + EAN-2 부가코드 2자리
+      //   → 앞 12자리로 체크섬을 직접 계산해 올바른 ISBN-13 복원
+      if (d.length === 14 && /^97[89]/.test(d)) {
+        var b12 = d.slice(0, 12);
+        var s = 0;
+        for (var i = 0; i < 12; i++) s += parseInt(b12[i]) * (i % 2 === 0 ? 1 : 3);
+        return b12 + ((10 - s % 10) % 10);
+      }
+
+      // 15자리(978/979 시작): EAN-13 + EAN-2 부가코드(표준)
+      if (d.length === 15 && /^97[89]/.test(d)) return d.slice(0, 13);
+
+      // 18자리(978/979 시작): EAN-13 + EAN-5 부가코드
+      if (d.length === 18 && /^97[89]/.test(d)) return d.slice(0, 13);
+
+      // ISBN-10 → ISBN-13 변환
+      if (d.length === 10) {
+        var base = '978' + d.slice(0, 9);
+        var s2 = 0;
+        for (var j = 0; j < 12; j++) s2 += parseInt(base[j]) * (j % 2 === 0 ? 1 : 3);
+        return base + ((10 - s2 % 10) % 10);
+      }
+
+      return d;
+    }
+
     // ── 결과 표시 ────────────────────────────────────────────
     function showResult(rawIsbn) {
-      const isbn = rawIsbn.replace(/\D/g, '');
-      if (!isbn) return;
+      var digits = rawIsbn.replace(/\D/g, '');
+      if (!digits) return;
 
-      const post       = ISBN_MAP[isbn];
+      var isbn = normalizeIsbn(rawIsbn);
+
+      // 정규화 ISBN 우선, 없으면 원본 digits로 조회
+      const post       = ISBN_MAP[isbn] || ISBN_MAP[digits];
       const statusEl   = document.getElementById('status-msg');
       const resultEl   = document.getElementById('result-card');
       const rescanBtn  = document.getElementById('rescan-btn');
