@@ -12,13 +12,42 @@ export async function getStaticPaths() {
     return data.draft !== true;
   });
 
-  return posts.map((post) => ({
+  const directPaths = posts.map((post) => ({
     params: { slug: post.slug },
-    props: { post },
+    props: { post, redirectTo: null as string | null },
   }));
+
+  // 구 URL /blog/{slug}/ → 신 URL /blog/{category}/{slug}/ 리다이렉트 페이지 생성
+  // 카테고리 구조 도입 전 색인된 URL 대응
+  const bareSlugMap = new Map<string, string>();
+  for (const post of posts) {
+    if (!post.slug.includes('/')) continue;
+    const bareSlug = post.slug.split('/').pop()!;
+    if (!bareSlugMap.has(bareSlug)) {
+      bareSlugMap.set(bareSlug, `/blog/${post.slug}/`);
+    }
+  }
+  const redirectPaths = Array.from(bareSlugMap.entries()).map(([bareSlug, target]) => ({
+    params: { slug: bareSlug },
+    props: { post: null as any, redirectTo: target },
+  }));
+
+  return [...directPaths, ...redirectPaths];
 }
 
-const { post } = Astro.props;
+const { post, redirectTo } = Astro.props;
+
+// 구 URL 리다이렉트 페이지
+if (redirectTo) {
+  return new Response(
+    `<!DOCTYPE html><html><head>` +
+    `<meta charset="utf-8">` +
+    `<meta http-equiv="refresh" content="0;url=${redirectTo}">` +
+    `<link rel="canonical" href="${redirectTo}">` +
+    `</head><body><p>Redirecting... <a href="${redirectTo}">${redirectTo}</a></p></body></html>`,
+    { headers: { 'Content-Type': 'text/html; charset=utf-8' } }
+  );
+}
 
 // 마크다운 본문 렌더링
 const { Content } = await post.render();
