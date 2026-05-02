@@ -7,6 +7,7 @@ export const CATEGORIES = [
   { slug: 'tech',            label: 'IT·기술' },
   { slug: 'finance',         label: '재테크' },
   { slug: 'travel',          label: '여행' },
+  { slug: 'weekend-trip',    label: '주말여행' },
   { slug: 'food',            label: '음식·맛집' },
   { slug: 'english-reading', label: '영어원서읽기' },
   { slug: 'camping',         label: '캠핑' },
@@ -23,12 +24,12 @@ const blogCollection = defineCollection({
 
     // 카테고리 (목록 페이지 분류 기준)
     category: z.enum([
-      'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading', 'camping'
+      'life-info', 'tech', 'finance', 'travel', 'weekend-trip', 'food', 'english-reading', 'camping'
     ]).optional(),
 
     // 추가 카테고리 (여러 카테고리에 동시 노출할 때 사용)
     categories: z.array(z.enum([
-      'life-info', 'tech', 'finance', 'travel', 'food', 'english-reading', 'camping'
+      'life-info', 'tech', 'finance', 'travel', 'weekend-trip', 'food', 'english-reading', 'camping'
     ])).optional().default([]),
 
     // 태그 (카테고리 내 세부 분류)
